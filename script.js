@@ -1,9 +1,23 @@
-let gitHubRequest = new XMLHttpRequest();
-gitHubRequest.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    let gitObject = JSON.parse(this.responseText);
-    document.getElementById("gitBio").innerHTML = gitObject.bio;
-  }
-};
-gitHubRequest.open("GET", "https://api.github.com/users/Anders44", true);
-gitHubRequest.send();
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200) {
+            let results = JSON.parse(this.responseText);
+            for(var i = 0; i < results.length; i++){
+                console.log(results[i].name);
+                
+                var ul = document.getElementById("repos");
+                var li = document.createElement("Li");
+                var a = document.createElement("a");
+
+                li.appendChild(document.createTextNode(results[i].name));
+                a.appendChild(li);
+                a.setAttribute("href", results[i].html_url);
+                ul.appendChild(a);
+
+            }
+        }
+    }
+
+xhttp.open("GET", "https://api.github.com/users/Anders44/repos", true);
+xhttp.send();

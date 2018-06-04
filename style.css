@@ -3,6 +3,7 @@ html {
 }
 
 .main-header {
+    font-family: 'Times New Roman', Times, serif;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     background-color: #91F17D;
@@ -69,4 +70,8 @@ img {
 .col-sm-1 {
     border: 1px solid white;
     background-color: #0BF3DB;
+}
+.repo-class {
+    display: flex;
+    justify-content: center;
 }
