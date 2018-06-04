@@ -21,3 +21,19 @@
 
 xhttp.open("GET", "https://api.github.com/users/Anders44/repos", true);
 xhttp.send();
+
+$(document).ready(function(){    
+    $(".zoom").hover(function(){
+        $(".zoom").css({"font-size": "200%"});
+    }, function(){
+        $(".zoom").css({"font-size": "100%"});
+    });
+});
+
+$(document).ready(function(){    
+    $(".smaller").hover(function(){
+        $(".smaller").css({"font-size": "150%"});
+    }, function(){
+        $(".smaller").css({"font-size": "100%"});
+    });
+});

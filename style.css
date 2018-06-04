@@ -75,3 +75,18 @@ img {
     display: flex;
     justify-content: center;
 }
+
+.smaller {
+    height: auto;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
